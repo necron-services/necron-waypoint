@@ -1,0 +1,2 @@
+# necron-waypoint
+Waypoint plugin
