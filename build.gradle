@@ -3,21 +3,21 @@ plugins {
     id 'com.github.johnrengelman.shadow' version '7.1.2'
 }
 
-allprojects {
-    group 'dev.necron'
-    version '0.0.1'
+group 'dev.necron'
+version '0.0.1'
+sourceCompatibility = 8
+compileJava.options.encoding = 'UTF-8'
 
-    repositories {
-        mavenLocal()
-        mavenCentral()
-        maven { url 'https://jitpack.io' }
-        maven { url 'https://repo.codemc.org/repository/nms/' }
-    }
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+    maven { url 'https://repo.codemc.org/repository/nms/' }
 }
 
 dependencies {
     compileOnly 'org.spigotmc:spigot:1.8.8-R0.1-SNAPSHOT'
-    implementation 'com.github.hakan-krgn.hCore:bukkit-primary:0.2.3'
+    implementation 'com.github.hakan-krgn.hCore:bukkit-primary:0.2.8'
     implementation(files("${System.properties['JAVA_HOME']}/../libs/necron-core.jar"))
 }
 
