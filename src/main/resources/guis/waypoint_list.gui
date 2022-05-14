@@ -1,0 +1,49 @@
+title: 'Waypoint'
+size: 6
+type: 'CHEST'
+item-slots: [ 10,11,12,13,14,15,16,19,20,21,22,23,24,25,28,29,30,31,32,33,34 ]
+
+items:
+  waypoint-item:
+    type: 'PAPER'
+    name: 'Waypoint List'
+    glow: false
+    amount: 1
+    datavalue: 0
+    lore: [ ]
+    nbt: '{}'
+  create-waypoint:
+    type: 'GRASS'
+    name: 'Create Waypoint'
+    glow: false
+    amount: 1
+    datavalue: 0
+    lore:
+      - '%now%/%max%'
+      - 'Money: %money%'
+    nbt: '{}'
+    slot: 4
+  back:
+    type: 'BARRIER'
+    name: 'Close'
+    glow: false
+    amount: 1
+    datavalue: 0
+    lore: [ ]
+    nbt: '{}'
+    slot: 49
+
+other-items:
+  item1:
+    type: 'STAINED_GLASS_PANE'
+    name: ''
+    glow: false
+    amount: 1
+    datavalue: 5
+    lore: [ ]
+    nbt: '{}'
+    slot: 0
+    console-commands:
+      - 'test %player%'
+    player-commands:
+      - 'warp market'

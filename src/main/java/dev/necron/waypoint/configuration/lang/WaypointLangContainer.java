@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 public enum WaypointLangContainer {
 
-    TIME_FORMAT("time-format"),
+    REACHED_THE_POINT("you-reached-the-point"),
 
     ;
 

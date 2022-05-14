@@ -7,8 +7,13 @@ import java.util.Arrays;
 @SuppressWarnings({"unchecked"})
 public enum WaypointConfigContainer {
 
-    DISABLED_WORLDS("settings.disabled-worlds"),
-
+    LANGUAGE_YAML("settings.language-yaml"),
+    BOSSBAR_ACTIVE("settings.boss-bar.active"),
+    BOSSBAR_TEXT("settings.boss-bar.text"),
+    BOSSBAR_COLOR("settings.boss-bar.color"),
+    BOSSBAR_STYLE("settings.boss-bar.style"),
+    ACTIONBAR_STYLE("settings.action-bar.active"),
+    ACTIONBAR_TEXT("settings.action-bar.text"),
     ;
 
 

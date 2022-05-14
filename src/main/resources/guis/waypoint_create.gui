@@ -1,0 +1,7 @@
+type: 'LEGACY_SIGN'
+input-line: 0
+lines:
+  - ''
+  - '^^^^^^^^^^^^^^^'
+  - 'Type point'
+  - 'name to above'

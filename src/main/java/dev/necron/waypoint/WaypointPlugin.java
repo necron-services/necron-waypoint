@@ -12,7 +12,6 @@ public class WaypointPlugin extends NecronPlugin {
     }
 
 
-
     @Override
     public void whenEnabled() {
         INSTANCE = this;
