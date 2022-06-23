@@ -12,6 +12,7 @@ items:
     datavalue: 0
     lore:
       - 'Left click to start walking'
+      - 'Right click to cancel walking'
       - 'Shift + Left click to delete'
     nbt: '{}'
   create-waypoint:
