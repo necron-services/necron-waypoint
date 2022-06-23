@@ -5,6 +5,7 @@ import com.hakan.core.hologram.HHologram;
 import com.hakan.core.message.bossbar.HBarColor;
 import com.hakan.core.message.bossbar.HBarStyle;
 import com.hakan.core.message.bossbar.HBossBar;
+import com.hakan.core.utils.ColorUtil;
 import dev.necron.waypoint.Waypoint;
 import dev.necron.waypoint.configuration.config.WaypointConfigContainer;
 import dev.necron.waypoint.utils.LocationUtil;
@@ -136,7 +137,8 @@ public class WaypointRoute {
         hologram.showEveryone(false);
 
         List<String> lines = WaypointConfigContainer.HOLOGRAM_LINES.getValue();
-        lines.forEach(line -> hologram.addLine(line.replace("%waypoint_name%", this.waypoint.getName())));
+        lines.forEach(line -> hologram.addLine(ColorUtil.colored(line)
+                .replace("%waypoint_name%", this.waypoint.getName())));
 
         return hologram;
     }
