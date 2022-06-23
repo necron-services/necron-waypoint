@@ -1,7 +1,8 @@
-type: 'LEGACY_SIGN'
+type: 'SIGN' # SIGN, ANVIL
+item: 'BIRCH_SIGN'
 input-line: 0
 lines:
   - ''
   - '^^^^^^^^^^^^^^^'
-  - 'Type point'
+  - 'Type waypoint'
   - 'name to above'

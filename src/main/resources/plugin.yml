@@ -1,4 +1,5 @@
 name: 'NecronWaypoint'
 author: 'NecronStudios'
-version: '0.0.1'
-main: 'dev.necron.waypoint.WaypointPlugin'
+version: 0.0.1
+api-version: 1.13
+main: dev.necron.waypoint.WaypointPlugin

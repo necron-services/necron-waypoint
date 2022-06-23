@@ -8,23 +8,44 @@ import java.util.Arrays;
 
 public enum WaypointLangContainer {
 
-    REACHED_THE_POINT("you-reached-the-point"),
-
-    ;
+    STARTED_THE_WALK("started-the-walk", ""),
+    CANCELLED_THE_WALK("cancelled-the-walk", ""),
+    REMOVED_WAYPOINT("removed-waypoint", ""),
+    WAYPOINT_ALREADY_CURRENT("already-current-waypoint", ""),
+    REACHED_WAYPOINT("reached", "");
 
 
     public static void reload() {
         Arrays.asList(WaypointLangContainer.values())
-                .forEach(container -> container.message = ColorUtil.colored(WaypointConfiguration.LANG.get(container.path)));
+                .forEach(container -> {
+                    Object message = WaypointConfiguration.LANG.get(container.path);
+                    if (message != null) {
+                        container.message = ColorUtil.colored(message.toString());
+                    } else {
+                        container.message = ColorUtil.colored(container.defaultValue);
+                        WaypointConfiguration.LANG.set(container.path, container.defaultValue);
+                        WaypointConfiguration.LANG.save();
+                    }
+                });
     }
 
 
     private final String path;
+    private final String defaultValue;
     private String message;
 
-    WaypointLangContainer(String path) {
+    WaypointLangContainer(String path, String defaultValue) {
         this.path = path;
-        this.message = ColorUtil.colored(WaypointConfiguration.LANG.get(this.path));
+        this.defaultValue = defaultValue;
+
+        Object message = WaypointConfiguration.LANG.get(path);
+        if (message != null) {
+            this.message = ColorUtil.colored(message.toString());
+        } else {
+            this.message = ColorUtil.colored(defaultValue);
+            WaypointConfiguration.LANG.set(this.path, defaultValue);
+            WaypointConfiguration.LANG.save();
+        }
     }
 
     public String getPath() {

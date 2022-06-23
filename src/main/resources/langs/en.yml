@@ -1,1 +1,5 @@
-you-reached-the-point: '&6&lWayPoint &7» &aYou reached the point!'
+started-the-walk: 'You started the walk to waypoint named %waypoint_name%!'
+cancelled-the-walk: 'You cancelled the walk to waypoint named %waypoint_name%!'
+removed-waypoint: 'You removed waypoint named %waypoint_name%!'
+already-current-waypoint: 'You are already walking to point named %waypoint_name%!'
+reached: 'You reached the waypoint named %waypoint_name%!'

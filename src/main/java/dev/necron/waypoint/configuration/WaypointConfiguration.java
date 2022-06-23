@@ -1,6 +1,6 @@
 package dev.necron.waypoint.configuration;
 
-import com.hakan.core.utils.HYaml;
+import com.hakan.core.utils.yaml.HYaml;
 import dev.necron.waypoint.WaypointPlugin;
 
 import java.util.Arrays;
@@ -21,7 +21,6 @@ public class WaypointConfiguration {
 
                 "langs/en.yml",
 
-                "guis/main.gui",
                 "guis/waypoint_create.gui",
                 "guis/waypoint_list.gui"
         ).forEach(path -> configurations.put(path, new WaypointConfiguration(HYaml.create(plugin, path, path))));
@@ -43,7 +42,7 @@ public class WaypointConfiguration {
     }
 
     public static WaypointConfiguration getByPath(String path) {
-        return WaypointConfiguration.findByPath(path).orElseThrow(() -> new NullPointerException("claim configuration couldn't for path: " + path));
+        return WaypointConfiguration.findByPath(path).orElseThrow(() -> new NullPointerException("waypoint configuration couldn't for path: " + path));
     }
 
 

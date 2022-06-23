@@ -1,7 +1,6 @@
 package dev.necron.waypoint.gui.adapter;
 
 import com.hakan.core.HCore;
-import com.hakan.core.ui.inventory.HInventory;
 import com.hakan.core.ui.inventory.item.ClickableItem;
 import dev.necron.waypoint.configuration.WaypointConfiguration;
 import dev.necron.waypoint.gui.adapter.item.MenuItem;
@@ -17,27 +16,31 @@ public abstract class PaginatedInventoryGUI extends InventoryGUI {
 
     public PaginatedInventoryGUI(@Nonnull String id, @Nonnull String title, int size, @Nonnull InventoryType type, @Nonnull Set<Option> options) {
         super(id, title, size, type, options);
+        super.pagination.setSlots(super.configuration.get("item-slots"));
     }
 
     public PaginatedInventoryGUI(@Nonnull String id, @Nonnull String title, int size, @Nonnull InventoryType type) {
         super(id, title, size, type);
+        super.pagination.setSlots(super.configuration.get("item-slots"));
     }
 
     public PaginatedInventoryGUI(@Nonnull WaypointConfiguration configuration) {
         super(configuration);
+        super.pagination.setSlots(super.configuration.get("item-slots"));
     }
 
     @Override
-    public void onOpen(@Nonnull HInventory hInventory, @Nonnull Player player) {
-        super.pagination.setSlots(super.configuration.get("item-slots"));
-        super.pagination.setItems(this.load(player));
+    protected void onOpen(@Nonnull Player player) {
+        if (super.pagination.getItemsSafe().size() == 0)
+            super.pagination.setItems(this.load(player));
+
         super.fillAir(true);
         super.fillPage(super.pagination.getCurrentPage());
         super.loadOtherItems();
 
         if (super.pagination.getPreviousPage() >= super.pagination.getFirstPage()) {
             super.setItem(MenuItem.fromConfiguration(super.configuration, "items.previous-page"), (event) -> {
-                if (HCore.spam("hclaims_ui_click_" + player.getUniqueId(), 100))
+                if (HCore.spam("waypoint_ui_click_" + player.getUniqueId(), 100))
                     return;
 
                 SoundUtil.playButtonClick(player);
@@ -48,7 +51,7 @@ public abstract class PaginatedInventoryGUI extends InventoryGUI {
 
         if (super.pagination.getNextPage() <= super.pagination.getLastPage()) {
             super.setItem(MenuItem.fromConfiguration(super.configuration, "items.next-page"), (event) -> {
-                if (HCore.spam("hclaims_ui_click_" + player.getUniqueId(), 100))
+                if (HCore.spam("waypoint_ui_click_" + player.getUniqueId(), 100))
                     return;
 
                 SoundUtil.playButtonClick(player);

@@ -6,14 +6,16 @@ item-slots: [ 10,11,12,13,14,15,16,19,20,21,22,23,24,25,28,29,30,31,32,33,34 ]
 items:
   waypoint-item:
     type: 'PAPER'
-    name: 'Waypoint List'
+    name: 'Waypoint - %waypoint_name%'
     glow: false
     amount: 1
     datavalue: 0
-    lore: [ ]
+    lore:
+      - 'Left click to start walking'
+      - 'Shift + Left click to delete'
     nbt: '{}'
   create-waypoint:
-    type: 'GRASS'
+    type: 'IRON_INGOT'
     name: 'Create Waypoint'
     glow: false
     amount: 1
@@ -23,6 +25,24 @@ items:
       - 'Money: %money%'
     nbt: '{}'
     slot: 4
+  previous-page:
+    type: 'ARROW'
+    name: 'Previous Page'
+    glow: false
+    amount: 1
+    datavalue: 0
+    lore: [ ]
+    nbt: '{}'
+    slot: 48
+  next-page:
+    type: 'ARROW'
+    name: 'Next Page'
+    glow: false
+    amount: 1
+    datavalue: 0
+    lore: [ ]
+    nbt: '{}'
+    slot: 50
   back:
     type: 'BARRIER'
     name: 'Close'
@@ -35,7 +55,7 @@ items:
 
 other-items:
   item1:
-    type: 'STAINED_GLASS_PANE'
+    type: 'LIME_STAINED_GLASS_PANE'
     name: ''
     glow: false
     amount: 1

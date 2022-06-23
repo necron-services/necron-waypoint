@@ -30,7 +30,7 @@ public abstract class InventoryGUI extends HInventory {
     }
 
     public InventoryGUI(@Nonnull WaypointConfiguration configuration) {
-        super("hclaims_" + configuration.getYaml().getFile().getName(),
+        super("waypoint_" + configuration.getYaml().getFile().getName(),
                 ColorUtil.colored(configuration.get("title")),
                 configuration.get("size"),
                 InventoryType.valueOf(configuration.get("type")));

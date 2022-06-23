@@ -1,9 +1,10 @@
 package dev.necron.waypoint;
 
 import com.hakan.core.HCore;
-import dev.necron.core.NecronPlugin;
+import dev.necron.waypoint.user.WaypointUserHandler;
+import org.bukkit.plugin.java.JavaPlugin;
 
-public class WaypointPlugin extends NecronPlugin {
+public class WaypointPlugin extends JavaPlugin {
 
     private static WaypointPlugin INSTANCE;
 
@@ -13,14 +14,14 @@ public class WaypointPlugin extends NecronPlugin {
 
 
     @Override
-    public void whenEnabled() {
+    public void onEnable() {
         INSTANCE = this;
         HCore.initialize(this);
-        WaypointHandler.initialize(this);
+        WaypointUserHandler.initialize(this);
     }
 
     @Override
-    public void whenDisabled() {
-
+    public void onDisable() {
+        WaypointUserHandler.uninitialize();
     }
 }

@@ -9,7 +9,6 @@ sourceCompatibility = 8
 compileJava.options.encoding = 'UTF-8'
 
 repositories {
-    mavenLocal()
     mavenCentral()
     maven { url 'https://jitpack.io' }
     maven { url 'https://repo.codemc.org/repository/nms/' }
@@ -17,8 +16,8 @@ repositories {
 
 dependencies {
     compileOnly 'org.spigotmc:spigot:1.8.8-R0.1-SNAPSHOT'
-    implementation 'com.github.hakan-krgn.hCore:bukkit-primary:0.2.8'
-    implementation(files("${System.properties['JAVA_HOME']}/../libs/necron-core.jar"))
+    implementation 'com.github.hakan-krgn.hCore:bukkit-primary:0.4.7'
+    implementation 'org.json:json:20220320'
 }
 
 artifacts.archives(tasks.shadowJar)
