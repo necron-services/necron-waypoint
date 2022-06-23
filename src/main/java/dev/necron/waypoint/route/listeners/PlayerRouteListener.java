@@ -2,10 +2,10 @@ package dev.necron.waypoint.route.listeners;
 
 import com.hakan.core.message.bossbar.HBossBar;
 import dev.necron.waypoint.Waypoint;
-import dev.necron.waypoint.user.WaypointUser;
-import dev.necron.waypoint.user.WaypointUserHandler;
 import dev.necron.waypoint.route.WaypointRoute;
 import dev.necron.waypoint.route.WaypointRouter;
+import dev.necron.waypoint.user.WaypointUser;
+import dev.necron.waypoint.user.WaypointUserHandler;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;

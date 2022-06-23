@@ -2,8 +2,6 @@ package dev.necron.waypoint.gui.guis;
 
 import com.hakan.core.ui.inventory.item.ClickableItem;
 import dev.necron.waypoint.Waypoint;
-import dev.necron.waypoint.user.WaypointUser;
-import dev.necron.waypoint.user.WaypointUserHandler;
 import dev.necron.waypoint.configuration.WaypointConfiguration;
 import dev.necron.waypoint.configuration.lang.WaypointLangContainer;
 import dev.necron.waypoint.events.WaypointStartEvent;
@@ -11,6 +9,8 @@ import dev.necron.waypoint.gui.adapter.PaginatedInventoryGUI;
 import dev.necron.waypoint.gui.adapter.item.MenuItem;
 import dev.necron.waypoint.gui.guis.create.WaypointCreateUI;
 import dev.necron.waypoint.route.WaypointRouter;
+import dev.necron.waypoint.user.WaypointUser;
+import dev.necron.waypoint.user.WaypointUserHandler;
 import dev.necron.waypoint.utils.SoundUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
