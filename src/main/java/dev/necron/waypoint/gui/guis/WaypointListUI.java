@@ -64,6 +64,10 @@ public class WaypointListUI extends PaginatedInventoryGUI {
                         player.sendMessage(WaypointLangContainer.WAYPOINT_ALREADY_CURRENT.getMessage()
                                 .replace("%waypoint_name%", waypoint.getName()));
                         return;
+                    } else if (!player.getWorld().equals(waypoint.getLocation().getWorld())) {
+                        player.sendMessage(WaypointLangContainer.WAYPOINT_NOT_IN_WORLD.getMessage()
+                                .replace("%waypoint_name%", waypoint.getName()));
+                        return;
                     }
 
                     WaypointRouter.start(player, waypoint);

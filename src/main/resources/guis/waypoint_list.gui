@@ -21,9 +21,7 @@ items:
     glow: false
     amount: 1
     datavalue: 0
-    lore:
-      - '%now%/%max%'
-      - 'Money: %money%'
+    lore: [ ]
     nbt: '{}'
     slot: 4
   previous-page:

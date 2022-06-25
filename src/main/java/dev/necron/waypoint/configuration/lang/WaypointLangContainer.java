@@ -12,7 +12,9 @@ public enum WaypointLangContainer {
     CANCELLED_THE_WALK("cancelled-the-walk", ""),
     REMOVED_WAYPOINT("removed-waypoint", ""),
     WAYPOINT_ALREADY_CURRENT("already-current-waypoint", ""),
-    REACHED_WAYPOINT("reached", "");
+    WAYPOINT_NOT_IN_WORLD("waypoint-not-in-world", ""),
+    REACHED_WAYPOINT("reached", ""),
+    ;
 
 
     public static void reload() {
